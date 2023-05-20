@@ -25,6 +25,8 @@ $purokList = (function () use ($db) {
     <title>Login - Barangay Services Management System</title>
 
     <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
     .hidden {
       display: none !important;
     }
@@ -45,7 +47,36 @@ $purokList = (function () use ($db) {
     .wrapper {
       height: 100% !important;
     }
+    .btn-cap {
+      background-color: #0065A3;
+      color: white;
+      border: none;
+      border-radius: 4px;
+  
+    }
+    .open-cam {
+      background-color: #203647;
+      color: white; 
+      border-radius: 4px;
+      border: none;
 
+    }
+    .btlogin {
+      background-color: #0065A3;
+      color: white; 
+      border-radius: 4px;
+      border: none;
+      padding: 10px;
+
+    }
+    .reg {
+      background-color: #203647;
+      color: white; 
+      border-radius: 4px;
+      border: none;
+      padding: 10px;
+
+    }
     </style>
   </head>
 

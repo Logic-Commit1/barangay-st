@@ -15,7 +15,7 @@ function isAdmin()
 	return _userRoleTransformer("administrator");
 }
 
-function isStaff()
+function isBarangayOfficial()
 {
 	return _userRoleTransformer("staff");
 }

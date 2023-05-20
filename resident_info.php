@@ -41,6 +41,10 @@ while ($row = $result->fetch_assoc()) {
   <head>
     <?php include 'templates/header.php' ?>
     <title>Resident Information - Barangay Services Management System</title>
+    <link href="img/logo.png" rel="icon" type="image/x-icon">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+      </style>
   </head>
 
   <body>
@@ -208,17 +212,17 @@ while ($row = $result->fetch_assoc()) {
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
-                      <table id="residenttable" class="display table table-striped">
+                      <table id="residenttable" class="display table">
                         <thead>
                           <tr>
-                            <th scope="col">Fullname</th>
-                            <th scope="col">Birthdate</th>
-                            <th scope="col">Age</th>
-                            <th scope="col">Civil Status</th>
-                            <th scope="col">Gender</th>
-                            <th scope="col">Purok</th>
-                            <th scope="col">Voter Status</th>
-                            <th scope="col">Identified As</th>
+                            <th scope="col">NAME</th>
+                            <th scope="col">BIRTHDATE/th>
+                            <th scope="col">AGE</th>
+                            <th scope="col">CIVIL STATUS</th>
+                            <th scope="col">GENDER</th>
+                            <th scope="col">PUROK</th>
+                            <th scope="col">VOTER STATUS</th>
+                            <th scope="col">IDENTIFIED AS</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -246,18 +250,7 @@ while ($row = $result->fetch_assoc()) {
                                                     endforeach ?>
                           <?php endif ?>
                         </tbody>
-                        <tfoot>
-                          <tr>
-                            <th scope="col">Fullname</th>
-                            <th scope="col">Birthdate</th>
-                            <th scope="col">Age</th>
-                            <th scope="col">Civil Status</th>
-                            <th scope="col">Gender</th>
-                            <th scope="col">Purok</th>
-                            <th scope="col">Voter Status</th>
-                            <th scope="col">Identified As</th>
-                          </tr>
-                        </tfoot>
+                      
                       </table>
                     </div>
                   </div>

@@ -21,7 +21,7 @@ function appendActiveClass(array $pages)
 	return in_array($GLOBALS["currentPage"], $pages) ? "active" : null;
 }
 ?>
-<div class="sidebar sidebar-style-2">
+<div class="sidebar">
   <div class="sidebar-wrapper scrollbar scrollbar-inner">
     <div class="sidebar-content">
       <div class="user">
@@ -68,15 +68,16 @@ function appendActiveClass(array $pages)
             <?= appendActiveClass(["dashboard", "resident_info", "purok_info"]) ?>
           ">
           <a href="dashboard.php">
-
+            <i class="fas fa-home"></i>
             <p>Dashboard</p>
           </a>
         </li>
 
         <li class="nav-section">
           <span class="sidebar-mini-icon">
-
+            <i class="fa fa-ellipsis-h"></i>
           </span>
+         
         </li>
 
         <?php if (role(["administrator", "staff"])): ?>
@@ -85,7 +86,7 @@ function appendActiveClass(array $pages)
               <?= appendActiveClass(["officials"]) ?>
             ">
           <a href="officials.php">
-
+            <i class="fas fa-user-tie"></i>
             <p>Brgy Officials and Staff</p>
           </a>
         </li>
@@ -96,7 +97,7 @@ function appendActiveClass(array $pages)
               <?= appendActiveClass(["certificate-requests"]) ?>
             ">
           <a href="certificate-requests.php">
-
+            <i class="fas fa-user-tie"></i>
             <p>Certificate Requests</p>
           </a>
         </li>
@@ -107,22 +108,33 @@ function appendActiveClass(array $pages)
               <?= appendActiveClass(["resident", "generate_resident"]) ?>
             ">
           <a href="resident.php">
-
+            <i class="icon-people"></i>
             <p>Resident Information</p>
           </a>
         </li>
         <?php endif; ?>
 
-        <?php if (role(["administrator", "staff"])): ?>
+        <?php if (role(["administrator"])): ?>
         <li class="
               nav-item
               <?= appendActiveClass(["resident_certification", "generate_brgy_cert"]) ?>
             ">
           <a href="resident_certification.php">
-
+            <i class="icon-badge"></i>
             <p>Barangay Certificates</p>
           </a>
         </li>
+
+        <li class="
+              nav-item
+              <?= appendActiveClass(["sms-announcement"]) ?>
+            ">
+          <a href="https://sms.teamssprogram.com" target="_blank">
+
+            <p>SMS Announcement</p>
+          </a>
+        </li>
+        
         <?php endif; ?>
 
         <?php if (isAdmin()): ?>
@@ -131,7 +143,7 @@ function appendActiveClass(array $pages)
             <?= appendActiveClass(["resident_cuttingpermit", "generate_cuttingpermit"]) ?>
           ">
           <a href="resident_cuttingpermit.php">
-
+            <i class="icon-docs"></i>
             <p>Cutting permit</p>
           </a>
         </li>
@@ -143,7 +155,7 @@ function appendActiveClass(array $pages)
             <?= appendActiveClass(["4ps-residents", "generate_fpscert"]) ?>
           ">
           <a href="4ps-residents.php">
-
+            <i class="icon-doc"></i>
             <p>4ps Certification</p>
           </a>
         </li>
@@ -155,7 +167,7 @@ function appendActiveClass(array $pages)
             <?= appendActiveClass(["resident_indigency", "generate_indi_cert"]) ?>
           ">
           <a href="resident_indigency.php">
-
+            <i class="icon-docs"></i>
             <p>Certificate of Indigency</p>
           </a>
         </li>
@@ -167,7 +179,7 @@ function appendActiveClass(array $pages)
             <?= appendActiveClass(["business_permit", "generate_business_permit"]) ?>
           ">
           <a href="business_permit.php">
-
+            <i class="icon-doc"></i>
             <p>Brgy Business Clearance</p>
           </a>
         </li>
@@ -179,7 +191,7 @@ function appendActiveClass(array $pages)
             <?= appendActiveClass(["blotter", "generate_blotter_report"]) ?>
           ">
           <a href="blotter.php">
-
+            <i class="icon-layers"></i>
             <p>Blotter Records</p>
           </a>
         </li>
@@ -190,7 +202,7 @@ function appendActiveClass(array $pages)
             <?= appendActiveClass(["announcements", "announcements-view"]) ?>
           ">
           <a href="announcements.php">
-
+            <i class="icon-pin"></i>
             <p>Announcements</p>
           </a>
         </li>
@@ -198,14 +210,14 @@ function appendActiveClass(array $pages)
         <?php if (role(["staff", "user"])): ?>
         <li class="nav-section">
           <span class="sidebar-mini-icon">
-
+            <i class="fa fa-ellipsis-h"></i>
           </span>
-
+          <h4 class="text-section">System</h4>
         </li>
         <li class="nav-item">
           <a href="#support" data-toggle="modal">
-
-            <p>Contact Support</p>
+            <i class="fas fa-flag"></i>
+            <p>Support</p>
           </a>
         </li>
         <?php endif; ?>
@@ -216,21 +228,21 @@ function appendActiveClass(array $pages)
               <?= appendActiveClass(["revenue"]) ?>
             ">
           <a href="revenue.php">
-
+            <i>₱</i>
             <p>Collection Payment</p>
           </a>
         </li>
 
         <li class="nav-section">
           <span class="sidebar-mini-icon">
-
+            <i class="fa fa-ellipsis-h"></i>
           </span>
           <h4 class="text-section">System</h4>
         </li>
 
         <li class="nav-item <?= $isSettingsPage ? "active" : null ?>">
           <a href="#settings" data-toggle="collapse" class="collapsed" aria-expanded="false">
-
+            <i class="icon-wrench"></i>
             <p>Settings</p>
             <span class="caret"></span>
           </a>
@@ -257,7 +269,11 @@ function appendActiveClass(array $pages)
                   <span class="sub-item">Positions</span>
                 </a>
               </li>
-     
+              <li class="<?= $currentPage == "chairmanship" ? "active" : null ?>">
+                <a href="chairmanship.php">
+                  <span class="sub-item">Chairmanship</span>
+                </a>
+              </li>
 
               <?php if ($_SESSION["role"] == "staff"): ?>
               <li>
@@ -284,6 +300,16 @@ function appendActiveClass(array $pages)
               </li>
 
 
+              <li>
+                <a href="backup/backup.php">
+                  <span class="sub-item">Backup</span>
+                </a>
+              </li>
+              <li>
+                <a href="#restore" data-toggle="modal">
+                  <span class="sub-item">Restore</span>
+                </a>
+              </li>
 
               <?php endif; ?>
             </ul>
@@ -301,7 +327,7 @@ function appendActiveClass(array $pages)
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Create User</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Create System User</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

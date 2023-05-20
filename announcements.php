@@ -32,6 +32,10 @@ $announcementList = (function () use ($db) {
   <head>
     <?php include "templates/header.php"; ?>
     <title>Barangay Sto. Tomas Announcement</title>
+    <link href="img/logo.png" rel="icon" type="image/x-icon">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+      </style>
   </head>
 
   <body>
@@ -60,6 +64,8 @@ $announcementList = (function () use ($db) {
 
             <div class="row mt--2">
               <div class="col-md-12">
+              <div class="card">
+              </div>
                 <div class="card">
                   <div class="card-header">
                     <div class="card-head-row">
@@ -76,7 +82,7 @@ $announcementList = (function () use ($db) {
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
-                      <table id="announcement-table" class="display table table-striped">
+                      <table id="announcement-table" class="display table">
                         <thead>
                           <tr>
                             <th scope="col">Title</th>

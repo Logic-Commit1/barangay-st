@@ -47,7 +47,7 @@ $request_list = (function () use ($db) {
 			->exec();
 	}
 
-	if (role(["administrator", "staff"])) {
+	if (role(["administrator", "barangay-official"])) {
 		return $db
 			->from(["certificate_requests" => "cr"])
 			->join("certificates", "certificates.id", "cr.certificate_id")
@@ -77,7 +77,11 @@ $request_list = (function () use ($db) {
 
   <head>
     <?php include "templates/header.php"; ?>
-    <title>Barangay Santo Tomas- DOCUMENT REQUEST</title>
+    <title>Announcements - Barangay Services Management System</title>
+    <link href="img/logo.png" rel="icon" type="image/x-icon">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+      </style>
   </head>
 
   <body>
@@ -96,7 +100,7 @@ $request_list = (function () use ($db) {
           <div class="panel-header bg-primary-gradient">
             <div class="page-inner">
               <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
-
+   
               </div>
             </div>
           </div>
@@ -106,6 +110,8 @@ $request_list = (function () use ($db) {
 
             <div class="row mt--2">
               <div class="col-md-12">
+              <div class="card">
+              </div>
                 <div class="card">
                   <div class="card-header">
                     <div class="card-head-row">
@@ -122,7 +128,7 @@ $request_list = (function () use ($db) {
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
-                      <table id="announcement-table" class="display table table-striped">
+                      <table id="announcement-table" class="display table">
                         <thead>
                           <tr>
                             <th scope="col">Certificate</th>
@@ -181,7 +187,7 @@ $request_list = (function () use ($db) {
                               <a data-toggle="tooltip" data-original-title="Remove" href="model/certificate-request.php?id=<?= $request[
                               	"id"
                               ] ?>&delete-request=1"
-                                onclick="confirm('Do you really want to delete this request?');"
+                                onclick="confirm('Are you sure you want to delete this blotter?');"
                                 class=" btn-link btn-danger">
                                 <i class="fa fa-times"></i>
                               </a>
@@ -289,12 +295,30 @@ $request_list = (function () use ($db) {
                     </div>
                   </div>
                 </div>
+                
                 <div class="modal-footer">
                   <input type="hidden" name="resident_id" value="<?= $resident_details["id"] ?>">
+                  <input type="hidden" name="respondent" value="">
                   <input type="hidden" name="request-certificate" value="1">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                   <button type="submit" class="btn btn-primary">Save</button>
+                  <?php
+                    if(isset($_POST['submit'])){
+                        $respondent = $_POST['respondent'];
+                        $query = "SELECT * FROM tblblotter WHERE respondent='$respondent'";
+                        $result = $conn->query($query);
+                        if (mysqli_num_rows($result) > 0) {
+                            echo "<script>alert('You have an existing blotter record. Please visit the barangay immediately.');</script>";
+                        } else {
+                            // do something else
+                        } 
+                
+                    }
+                    
+                    ?>
+                    
                 </div>
+                
               </form>
             </div>
           </div>

@@ -30,6 +30,10 @@ $revenue = (function () use ($db) {
     <link rel="stylesheet" href="assets/js/plugin/datatables/Buttons-1.6.1/css/buttons.dataTables.min.css">
     <title>Barangay Collection Payment - Barangay
       Services Management System</title>
+      <link href="img/logo.png" rel="icon" type="image/x-icon">
+      <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+      </style>
   </head>
 
   <body>
@@ -82,7 +86,7 @@ $revenue = (function () use ($db) {
                       </div>
                     </div>
                     <div class="table-responsive">
-                      <table id="revenuetable" class="display table table-striped">
+                      <table id="revenuetable" class="display table">
                         <thead>
                           <tr>
                             <th scope="col">Date

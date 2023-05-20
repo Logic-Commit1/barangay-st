@@ -48,10 +48,7 @@ $ext = pathinfo($avatar, PATHINFO_EXTENSION);
 $avatarFilename = "$uniqId.$ext";
 $avatarDir = "../assets/uploads/avatar/$avatarFilename";
 
-$hash = sha1($username);
 $hash = sha1($password);
-$hash = sha1($user_type);
-
 
 $result = $conn->query("
 	INSERT INTO users(username, password, avatar, user_type)

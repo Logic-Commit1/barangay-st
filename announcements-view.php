@@ -26,8 +26,13 @@ $announcement = (function () use ($db) {
   <head>
     <?php include "templates/header.php"; ?>
     <title>Barangay Sto. Tomas- Announcement</title>
+    <link href="img/logo.png" rel="icon" type="image/x-icon">
+
 
     <style>
+
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+    
     .announcement__img {
       max-height: 500px;
       display: block;

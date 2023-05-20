@@ -15,6 +15,10 @@ while ($row = $result->fetch_assoc()) {
   <head>
     <?php include 'templates/header.php' ?>
     <title>Requested Documents - Barangay Services Management System</title>
+    <link href="img/logo.png" rel="icon" type="image/x-icon">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+      </style>
   </head>
 
   <body>
@@ -96,18 +100,7 @@ while ($row = $result->fetch_assoc()) {
                           </tr>
                           <?php endif ?>
                         </tbody>
-                        <tfoot>
-                          <tr>
-                            <th scope="col">No.</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Number</th>
-                            <th scope="col">Requested_Documents</th>
-                            <th scope="col">Purpose</th>
-                            <th scope="col">Date</th>
-                            <th scope="col">Action</th>
-                          </tr>
-                        </tfoot>
+                       
                       </table>
                     </div>
                   </div>

@@ -15,6 +15,10 @@ while ($row = $result->fetch_assoc()) {
 <head>
     <?php include "templates/header.php"; ?>
     <title>Barangay Purok - Barangay Services Management System</title>
+    <link href="img/logo.png" rel="icon" type="image/x-icon">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+      </style>
 </head>
 
 <body>

@@ -23,19 +23,28 @@ $purokList = (function () use ($db) {
     <?php include "templates/header.php"; ?>
 
     <title>Login - Barangay Services Management System</title>
+    <link href="img/logo.png" rel="icon" type="image/x-icon">
 
     <style>
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+    body{
+      
+
+
+    }
     .hidden {
       display: none !important;
     }
 
     label.btn.active {
       color: white !important;
-      background-color: #337BB6;
+      background-color: #0065A3;
     }
 
     .form-check>.btn-group {
       width: 100%;
+      length: 50%;
     }
 
     .form-check>.btn-group>label {
@@ -44,6 +53,38 @@ $purokList = (function () use ($db) {
 
     .wrapper {
       height: 100% !important;
+    }
+    .btn-cap {
+      background-color: #0065A3;
+      color: white;
+      border: none;
+      border-radius: 4px;
+  
+      
+    
+    }
+    .open-cam {
+      background-color: #203647;
+      color: white; 
+      border-radius: 4px;
+      border: none;
+
+    }
+    .btlogin {
+      background-color: #0065A3;
+      color: white; 
+      border-radius: 4px;
+      border: none;
+      padding: 10px;
+
+    }
+    .reg {
+      background-color: #203647;
+      color: white; 
+      border-radius: 4px;
+      border: none;
+      padding: 10px;
+
     }
 
     </style>
@@ -97,10 +138,10 @@ $purokList = (function () use ($db) {
                       </div>
 
                       <div class="form-group d-flex justify-content-center gap-2">
-                        <button type="button" class="btn btn-danger btn-sm mr-2" id="open_cam">
+                        <button type="button" class="open-cam" id="open_cam">
                           Open Camera
                         </button>
-                        <button type="button" class="btn btn-secondary btn-sm ml-2" onclick="save_photo()">
+                        <button type="button" class="btn-cap" onclick="save_photo()">
                           Capture
                         </button>
                       </div>
@@ -299,7 +340,7 @@ $purokList = (function () use ($db) {
                         <div class="col-12">
                           <div class="form-group">
                             <label>Username</label>
-                            <input class="form-control" placeholder="Enter Username Ex.JuanDC2000="username">
+                            <input class="form-control" placeholder="Enter Username Ex.JuanDC2000=" name= "username">
                           </div>
                         </div>
 
@@ -337,12 +378,12 @@ $purokList = (function () use ($db) {
                     </a>
                     <?php endif; ?>
 
-                    <button type="submit" class="btn btn-success btn-block text-white fw-bold">
+                    <button type="submit" class="reg">
                       Register
                     </button>
 
                     <?php if (!isAuthenticated()): ?>
-                    <a href="login.php" class="btn btn-dark btn-block text-white fw-bold">
+                    <a href="login.php" class="btlogin" color="white">
                       Back to Login
                     </a>
                     <?php endif; ?>

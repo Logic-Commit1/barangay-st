@@ -5,7 +5,7 @@
     <div class="logo-header" data-background-color="light-blue">
 
         <a href="dashboard.php" class="logo">
-            <span class="text-light ml-2 fw-bold" style="font-size:20px">Home</span>
+            <span class="text-light ml-2 fw-bold" style="font-size:15px">Barangay Sto. Tomas</span>
         </a>
         <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon">
@@ -23,7 +23,7 @@
 
     <!-- Navbar Header -->
     <nav class="navbar navbar-header navbar-expand-lg " data-background-color="light-blue">
-    <span class="text-light ml-2 fw-bold" style="font-size:18px" >BARANGAY STO. TOMAS</span>
+    <span class="text-light ml-2 fw-bold" style="font-size:18px" ></span>
         <div class="container-fluid d-flex justify-content-end ">
             <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
                 <li class="nav-item dropdown hidden-caret">

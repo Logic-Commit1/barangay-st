@@ -1,7 +1,7 @@
 <footer class="footer">
   <div class="container-fluid">
     <div class="copyright ml-auto">
-      Barangay Sto Tomas Binan Laguna Presented by Bustamantante  Crisostomo  Cruz  Manimbo  Padron  Satuito  Vallar  Zaguirre 
+      
     </div>
   </div>
 </footer>

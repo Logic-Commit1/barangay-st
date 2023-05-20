@@ -15,6 +15,10 @@ while ($row = $result->fetch_assoc()) {
   <head>
     <?php include 'templates/header.php' ?>
     <title>4ps Certification - Barangay Services Management System</title>
+    <link href="img/logo.png" rel="icon" type="image/x-icon">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+      </style>
   </head>
 
   <body>
@@ -42,6 +46,8 @@ while ($row = $result->fetch_assoc()) {
           <div class="page-inner">
             <div class="row mt--3">
               <div class="col-md-12">
+              <div class="card">
+              </div>
 
                 <?php include "templates/alert.php"; ?>
 
@@ -61,7 +67,7 @@ while ($row = $result->fetch_assoc()) {
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
-                      <table id="residenttable" class="display table table-striped">
+                      <table id="residenttable" class="display table">
                         <thead>
                           <tr>
                             <th scope="col">Name</th>

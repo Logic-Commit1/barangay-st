@@ -152,19 +152,19 @@ $announcements = (function () use ($db) {
 function getRandomColor()
 {
 	$colors = [
-	  "#84d4ff",
-		"#84d4ff",
-		"#84d4ff",
-		"#84d4ff",
-		"#84d4ff",
-		"#84d4ff",
-		"#84d4ff",
-		"#84d4ff",
-		"#84d4ff",
-		"#84d4ff",
-		"#84d4ff",
-		"#84d4ff",
-		"#84d4ff",
+	  "#ffffff",
+		"#ffffff",
+		"#ffffff",
+		"#ffffff",
+		"#ffffff",
+		"#ffffff",
+		"#ffffff",
+		"#ffffff",
+		"#ffffff",
+		"#ffffff",
+		"#ffffff",
+		"#ffffff",
+		"#ffffff",
 		
 	];
 
@@ -274,9 +274,11 @@ $admin_dashboard_cards = [
   <head>
     <?php include "templates/header.php"; ?>
     <title>Barangay Sto Tomas- HOME</title>
+		<link href="img/logo.png" rel="icon" type="image/x-icon">
 
 
     <style>
+			@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
     .hidden {
       display: none !important;
     }
@@ -361,9 +363,7 @@ $admin_dashboard_cards = [
                    
 
                     <div class="text-center">
-                      <img class="img-fluid" src="<?= !empty($db_img)
-                      	? "assets/uploads/" . $db_img
-                      	: "assets/img/bg-abstract.png" ?>" />
+                     
                     </div>
                   </div>
           <div class="page-inner mt--2">
@@ -442,7 +442,7 @@ $admin_dashboard_cards = [
               <?php foreach ($admin_dashboard_cards as $row): ?>
               <div class="col-md-4">
                 <div class="card card-stats card-round"
-                style="background-color: <?= getRandomColor() ?>; color: #fff"
+                style="background-color: <?= getRandomColor() ?>; color: #000"
                 >
                   <div class="card-body">
                     <div class="row">
@@ -486,7 +486,7 @@ $admin_dashboard_cards = [
                   <div class="card-header">
                     <div class="card-head-row">
                       <div class="card-title fw-bold">
-                        Mission and Vision
+                  
                       </div>
                     </div>
                   </div>

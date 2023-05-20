@@ -22,6 +22,10 @@ $users = $db
 <head>
 	<?php include "templates/header.php"; ?>
 	<title>User Management - Barangay Services Management System</title>
+	<link href="img/logo.png" rel="icon" type="image/x-icon">
+	<style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+      </style>
 </head>
 
 <body>
@@ -183,7 +187,7 @@ $users = $db
 									<label>User Type</label>
 									<select class="form-control" id="pillSelect" required name="user_type">
 										<option disabled selected>Select User Type</option>
-										<option value="staff">Staff</option>
+										<option value="staff">Barangay Official</option>
 										<option value="administrator">Administrator</option>
 									</select>
 								</div>

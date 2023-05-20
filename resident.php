@@ -78,6 +78,11 @@ $residentList = (function () use ($db) {
 <head>
   <?php include "templates/header.php"; ?>
   <title>Resident Information - Barangay Services Management System</title>
+  <link href="img/logo.png" rel="icon" type="image/x-icon">
+  <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+      
+      </style>
 </head>
 
 <body>
@@ -98,12 +103,15 @@ $residentList = (function () use ($db) {
             </div>
           </div>
         </div>
+        
         <div class="page-inner">
           <div class="row mt--2">
             <div class="col-md-12">
 
               <?php include "templates/alert.php"; ?>
 
+              <div class="card">
+              </div>
               <div class="card">
                 <div class="card-header">
                   <div class="card-head-row">
@@ -130,22 +138,22 @@ $residentList = (function () use ($db) {
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
-                    <table id="residenttable" class="display table table-striped">
+                    <table id="residenttable" class="display table">
                       <thead>
                         <tr>
-                          <th scope="col">Fullname</th>
-                          <th scope="col">National ID</th>
-                          <th scope="col">Alias</th>
-                          <th scope="col">Birthdate</th>
-                          <th scope="col">Age</th>
-                          <th scope="col">Civil Status</th>
-                          <th scope="col">Gender</th>
-                          <th scope="col">Purok</th>
+                          <th scope="col">NAME</th>
+                          <th scope="col">NATIONAL ID</th>
+                          <th scope="col">ALIAS</th>
+                          <th scope="col">BIRTHDATE</th>
+                          <th scope="col">AGE</th>
+                          <th scope="col">CIVIL STATUS</th>
+                          <th scope="col">GENDER</th>
+                          <th scope="col">PUROK</th>
                           <?php if (isAuthenticated()): ?>
                             <?php if (isAdmin()): ?>
-                              <th scope="col">Voter Status</th>
+                              <th scope="col">VOTER STATUS</th>
                             <?php endif; ?>
-                            <th scope="col">Action</th>
+                            <th scope="col">ACTION</th>
                           <?php endif; ?>
                         </tr>
                       </thead>
@@ -223,24 +231,7 @@ $residentList = (function () use ($db) {
                           <?php endforeach; ?>
                         <?php endif; ?>
                       </tbody>
-                      <tfoot>
-                        <tr>
-                          <th scope="col">Fullname</th>
-                          <th scope="col">National ID</th>
-                          <th scope="col">Alias</th>
-                          <th scope="col">Birthdate</th>
-                          <th scope="col">Age</th>
-                          <th scope="col">Civil Status</th>
-                          <th scope="col">Gender</th>
-                          <th scope="col">Purok</th>
-                          <?php if (isAuthenticated()): ?>
-                            <?php if (isAdmin()): ?>
-                              <th scope="col">Voter Status</th>
-                            <?php endif; ?>
-                            <th scope="col">Action</th>
-                          <?php endif; ?>
-                        </tr>
-                      </tfoot>
+                     
                     </table>
                   </div>
                 </div>

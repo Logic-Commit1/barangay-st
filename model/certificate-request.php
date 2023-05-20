@@ -25,6 +25,16 @@ if (isset($_POST["request-certificate"])) {
 		header("Location: ../certificate-requests.php");
 		return $conn->close();
 	}
+	if(isset($_POST['submit'])){
+		$respondent = $_POST['respondent'];
+		$query = "SELECT * FROM tblblotter WHERE respondent='$respondent'";
+		$result = $conn->query($query);
+		if (mysqli_num_rows($result) > 0) {
+				echo "<script>alert('Product Code exists. Please try another Product Code.');</script>";
+		} else {
+				// do something else
+		} 
+	}
 
 	$certificateDetails = $db
 		->from("certificates")
@@ -168,6 +178,19 @@ if (isset($_POST["edit-request"])) {
 	header("Location: ../certificate-requests.php");
 	return $conn->close();
 }
+
+if(isset($_POST['submit'])){
+		$respondent = $_POST['respondent'];
+		$query = "SELECT * FROM tblblotter WHERE respondent='$respondent'";
+		$result = $conn->query($query);
+		if (mysqli_num_rows($result) > 0) {
+				echo "<script>alert('You have an existing blotter record. Please visit the barangay immediately.');</script>";
+		} else {
+				// do something else
+		} 
+
+}
+
 
 if (isset($_GET["delete-request"])) {
 	$request_id = getBody("id", $_GET);

@@ -24,6 +24,7 @@ $sec = $conn->query($s)->fetch_assoc();
   <head>
     <?php include 'templates/header.php' ?>
     <title>Electrical Certificate - Barangay Services Management System</title>
+    <link href="img/logo.png" rel="icon" type="image/x-icon">
   </head>
 
   <body>

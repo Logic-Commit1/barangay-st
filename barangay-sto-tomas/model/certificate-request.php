@@ -56,6 +56,7 @@ if (isset($_POST["request-certificate"])) {
 
 		$has_empty_cert_field = array_find_key($requiredFields, fn($item) => empty($item));
 	}
+	
 
 	/**
 	 * Is cutting permit
@@ -87,6 +88,30 @@ if (isset($_POST["request-certificate"])) {
 		header("Location: ../certificate-requests.php");
 		return $conn->close();
 	}
+	$query_name = "SELECT firstname, middlename, lastname FROM `residents` WHERE id = '$resident_id'";
+		$result_name = $conn->query($query_name);
+		$row = $result_name->fetch_assoc();
+		$fullname = implode(" ", $row);
+		$query = "SELECT * FROM tblblotter WHERE respondent = '$fullname'";
+		$result = $conn->query($query);
+
+		if (mysqli_num_rows($result) > 0) {
+			$_SESSION["message"] = "You have an <b>existing blotter record</b>. Please visit the barangay immediately.</b>";
+			$_SESSION["status"] = "danger";
+			header("Location: ../certificate-requests.php");
+			return $conn->close();
+			}
+
+	$respondent = $_POST['respondent'];
+		$query = "SELECT * FROM tblblotter WHERE respondent = '$respondent'";
+		$result = $conn->query($query);
+	//	$rows=mysqli_num_rows($result);
+		//if (mysqli_num_rows($result) > 0) {
+		$_SESSION["message"] = "<b>You have $result record!</b>";
+		$_SESSION["status"] = "danger";
+		header("Location: ../certificate-requests.php");
+		return $conn->close();
+		//}
 
 	$result = $db
 		->insert("certificate_requests")

@@ -55,6 +55,10 @@ $residentList = (function () use ($db) {
 <head>
 	<?php include "templates/header.php"; ?>
 	<title>Certificate Requests</title>
+	<link href="img/logo.png" rel="icon" type="image/x-icon">
+	<style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+      </style>
 </head>
 
 <body>
@@ -78,6 +82,8 @@ $residentList = (function () use ($db) {
 				<div class="page-inner">
 					<div class="row mt--2">
 						<div class="col-md-12">
+						<div class="card">
+              </div>
 							<?php include "templates/sidebar.php"; ?>
 
 							<div class="card">
@@ -88,7 +94,7 @@ $residentList = (function () use ($db) {
 								</div>
 								<div class="card-body">
 									<div class="table-responsive">
-										<table id="residenttable" class="display table table-striped">
+										<table id="residenttable" class="display table">
 											<thead>
 												<tr>
 													<th scope="col">Fullname</th>
@@ -155,24 +161,7 @@ $residentList = (function () use ($db) {
 													<?php endforeach; ?>
 												<?php endif; ?>
 											</tbody>
-											<tfoot>
-												<tr>
-													<th scope="col">Fullname</th>
-													<th scope="col">National ID</th>
-													<th scope="col">Alias</th>
-													<th scope="col">Birthdate</th>
-													<th scope="col">Age</th>
-													<th scope="col">Civil Status</th>
-													<th scope="col">Gender</th>
-													<th scope="col">Purok</th>
-													<?php if (isAuthenticated()): ?>
-														<?php if (isAdmin()): ?>
-															<th scope="col">Voter Status</th>
-														<?php endif; ?>
-														<th scope="col">Action</th>
-													<?php endif; ?>
-												</tr>
-											</tfoot>
+										
 										</table>
 									</div>
 								</div>

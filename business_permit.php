@@ -15,6 +15,10 @@ while ($row = $result->fetch_assoc()) {
   <head>
     <?php include 'templates/header.php' ?>
     <title>Resident Certificate Issuance - Barangay Services Management System</title>
+    <link href="img/logo.png" rel="icon" type="image/x-icon">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+      </style>
   </head>
 
   <body>
@@ -61,7 +65,7 @@ while ($row = $result->fetch_assoc()) {
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
-                      <table id="residenttable" class="display table table-striped">
+                      <table id="residenttable" class="display table">
                         <thead>
                           <tr>
                             <th scope="col">Name of Business</th>
@@ -107,17 +111,7 @@ while ($row = $result->fetch_assoc()) {
                           <?php endforeach ?>
                           <?php endif ?>
                         </tbody>
-                        <tfoot>
-                          <tr>
-                            <th scope="col">Name of Business</th>
-                            <th scope="col">Business Owner</th>
-                            <th scope="col">Nature</th>
-                            <th scope="col">Date Applied</th>
-                            <?php if (isset($_SESSION['username'])) : ?>
-                            <th scope="col">Action</th>
-                            <?php endif ?>
-                          </tr>
-                        </tfoot>
+                   
                       </table>
                     </div>
                   </div>

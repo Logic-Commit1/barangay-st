@@ -35,6 +35,7 @@ $captain = $db
   <head>
     <?php include 'templates/header.php' ?>
     <title>4ps certification - Barangay Services Management System</title>
+    <link href="img/logo.png" rel="icon" type="image/x-icon">
     <style>
     @page {
       size: auto;

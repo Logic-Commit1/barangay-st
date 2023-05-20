@@ -22,6 +22,27 @@ $settled = $result3->num_rows;
 <head>
 	<?php include "templates/header.php"; ?>
 	<title>Barangay Sto Tomas-Blotter</title>
+	<link href="img/logo.png" rel="icon" type="image/x-icon">
+	<style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+				.activeb {
+        background: #0065A3;
+        padding: 2px 10px;
+        display: inline-block;
+        border-radius: 40px;
+        color: #fff;
+        }
+				.cardib {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				height: 70px;
+				padding: 25px;
+				border-radius: 5px;
+				background: #0065A3;
+				box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #ffffff;
+			}
+		</style>
 </head>
 
 <body>
@@ -39,7 +60,7 @@ $settled = $result3->num_rows;
 
 				<div class="panel-header bg-primary-gradient">
 					<div class="page-inner">
-						<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+						
 							<div>
 								
 						</div>
@@ -50,6 +71,8 @@ $settled = $result3->num_rows;
 
 					<div class="row mt--2">
 						<div class="col-md-9">
+						<div class="card">
+						</div>
 							<div class="card">
 								<div class="card-header">
 									<div class="card-head-row">
@@ -66,7 +89,7 @@ $settled = $result3->num_rows;
 								</div>
 								<div class="card-body">
 									<div class="table-responsive">
-										<table id="blottertable" class="display table table-striped">
+										<table id="blottertable" class="display table">
 											<thead>
 												<tr>
 													<th scope="col">Complainant</th>
@@ -91,9 +114,9 @@ $settled = $result3->num_rows;
 																<?php if ($row["status"] == "Scheduled"): ?>
 																	<span class="badge badge-warning">Scheduled</span>
 																<?php elseif ($row["status"] == "Active"): ?>
-																	<span class="badge badge-danger">Active</span>
+																	<span class="activeb">Active</span>
 																<?php else: ?>
-																	<span class="badge badge-success">Settled</span>
+																	<span class="activeb">Settled</span>
 																<?php endif; ?>
 															</td>
 															<?php if (isset($_SESSION["username"])): ?>
@@ -166,6 +189,7 @@ $settled = $result3->num_rows;
 								</div>
 							</div>
 						</div>
+						
 						<div class="col-md-3">
 							<div class="card card-stats card-danger card-round">
 								<div class="card-body">
@@ -185,6 +209,7 @@ $settled = $result3->num_rows;
 										</div>
 									</div>
 								</div>
+								
 								<div class="card-body">
 									<a href="javascript:void(0)" id="activeCase" class="card-link text-light">Active Case </a>
 								</div>

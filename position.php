@@ -14,6 +14,10 @@ while ($row = $result->fetch_assoc()) {
   <head>
     <?php include 'templates/header.php' ?>
     <title>Barangay Sto. Tomas</title>
+    <link href="img/logo.png" rel="icon" type="image/x-icon">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+      </style>
   </head>
 
   <body>
@@ -58,7 +62,7 @@ while ($row = $result->fetch_assoc()) {
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
-                      <table class="table table-striped">
+                      <table class="table">
                         <thead>
                           <tr>
                             <th scope="col">No.</th>

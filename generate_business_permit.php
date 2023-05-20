@@ -44,6 +44,7 @@ if (isset($_GET['request_id'])) {
   <head>
     <?php include 'templates/header.php' ?>
     <title>Business Permit - Barangay Services Management System</title>
+    <link href="img/logo.png" rel="icon" type="image/x-icon">
     <style>
     @page {
       size: auto;

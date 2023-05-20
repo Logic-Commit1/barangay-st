@@ -23,6 +23,18 @@ while ($row = $res_o->fetch_assoc()) {
   <head>
     <?php include 'templates/header.php' ?>
     <title>Brg Officials and Staff - Barangay Services Management System</title>
+    <link href="img/logo.png" rel="icon" type="image/x-icon">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+        
+        .activeb {
+        background: #0065A3;
+        padding: 2px 10px;
+        display: inline-block;
+        border-radius: 40px;
+        color: #fff;
+        }
+      </style>
   </head>
 
   <body>
@@ -55,20 +67,7 @@ while ($row = $res_o->fetch_assoc()) {
 
               <div class="col-md-12">
                 <div class="card">
-                  <div class="card-body">
-                    <div class="d-flex flex-wrap pb-2 justify-content-between">
-                      <div class="px-2 pb-2 pb-md-0 text-center">
-                        <img src="assets/uploads/<?= $brgy_logo ?>" class="img-fluid" width="100">
-                      </div>
-                      <div class="px-2 pb-2 pb-md-0 text-center">
-                        <h2 class="fw-bold mt-3"><?= ucwords($brgy) ?></h2>
-                        <h4 class="fw-bold mt-3"><i><?= ucwords($town) ?></i></h4>
-                      </div>
-                      <div class="px-2 pb-2 pb-md-0 text-center">
-                        <img src="assets/img/brgy-logo.png" class="img-fluid" width="100" style="visibility:hidden;">
-                      </div>
-                    </div>
-                  </div>
+                  
                 </div>
                 <div class="card">
                   <div class="card-header">
@@ -86,20 +85,20 @@ while ($row = $res_o->fetch_assoc()) {
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
-                      <table class="table table-striped">
+                      <table class="table">
                         <thead>
                           <tr>
-                            <th scope="col">Fullname</th>
-                            <th scope="col">Chairmanship</th>
-                            <th scope="col">Position</th>
-                            <th scope="col">Start of Term</th>
-                            <th scope="col">End of Term</th>
+                            <th scope="col">NAME</th>
+                            <th scope="col">CHAIRMANSHIP</th>
+                            <th scope="col">POSITION</th>
+                            <th scope="col">START OF TERM</th>
+                            <th scope="col">END OF TERM</th>
                             <?php if (isset($_SESSION['username'])) : ?>
                             <?php if ($_SESSION['role'] == 'administrator') : ?>
-                            <th>Status</th>
+                            <th>STATUS</th>
                             <?php endif ?>
 
-                            <th>Action</th>
+                            <th></th>
                             <?php endif ?>
                           </tr>
                         </thead>
@@ -118,7 +117,7 @@ while ($row = $res_o->fetch_assoc()) {
                             <?php if (isset($_SESSION['username'])) : ?>
                             <?php if ($_SESSION['role'] == 'administrator') : ?>
                             <td>
-                              <?= $row['status'] == 'Active' ? '<span class="badge badge-primary">Active</span>' : '<span class="badge badge-danger">Inactive</span>' ?>
+                              <?= $row['status'] == 'Active' ? '<span class="activeb">Active</span>' : '<span class="badge badge-danger">Inactive</span>' ?>
                             </td>
                             <?php endif ?>
                             <td>
@@ -147,21 +146,8 @@ while ($row = $res_o->fetch_assoc()) {
                           </tr>
                           <?php endif ?>
                         </tbody>
-                        <tfoot>
-                          <tr>
-                            <th scope="col">Fullname</th>
-                            <th scope="col">Chairmanship</th>
-                            <th scope="col">Position</th>
-                            <?php if (isset($_SESSION['username'])) : ?>
-                            <?php if ($_SESSION['role'] == 'administrator') : ?>
-                            <th>Status</th>
-                            <?php endif ?>
-                            <th scope="col">Start of Term</th>
-                            <th scope="col">End of Term</th>
-                            <th>Action</th>
-                            <?php endif ?>
-                          </tr>
-                        </tfoot>
+                        
+                       
                       </table>
                     </div>
                   </div>

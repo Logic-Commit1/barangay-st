@@ -11,6 +11,14 @@ $certificates = $db
 		"url" => "certificates.url",
 	])
 	->exec();
+  
+  $resident = (function () use ($db) {
+    return $db
+      ->from("residents")
+      ->where("id", $_GET["id"])
+      ->first()
+      ->exec();
+  })();
 
 $resident_details = (function () use ($db) {
 	if (isUser()) {
